@@ -418,6 +418,7 @@ body {
     background-color: #FFFFFF;
     border-radius: 0 24px 24px 0;
     padding: 20px;
+    text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
