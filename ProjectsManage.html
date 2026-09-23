@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Amirhossein Plato">
+    <meta name="description" content="Amirhossein Mohammad HassaniZadeh's Resume Website.">
+    <meta name="keywords" content="Professional Resume, Personal Resume, Resume, job">
+    <title>مدیریت پروژه ها</title>
+    <link rel="stylesheet" href="styles/ProjectsManage.css">
+    <link rel="icon" href="imgs/Favicon.png">
+</head>
+<body>
+    <main class="ProjectsManage">
+        <h1 class="ProjectsManage__title">افزودن پروژه</h1>
+        <section class="ProjectsManage__wrapper">
+            <div class="ProjectsManage__field">
+                <label for="ProjectTitle" class="ProjectsManage__labels">عنوان پروژه</label>
+                <input type="text" id="ProjectTitle" class="ProjectsManage__inputs" placeholder="عنوان را بنویسید">
+            </div>
+            <div class="ProjectsManage__field">
+                <label for="ProjectCaption" class="ProjectsManage__labels">توضیحات پروژه</label>
+                <textarea name="ProjectCaption" id="ProjectCaption" class="ProjectsManage__textarea" placeholder="توضیحات مربوطه را بنویسید"></textarea>
+            </div>
+            <div class="ProjectsManage__field">
+                <label for="ProjectLink" class="ProjectsManage__labels">لینک پروژه</label>
+                <input type="text" id="ProjectLink" class="ProjectsManage__inputs" placeholder="آدرس پروژه را بنویسید">
+            </div>
+            <div class="ProjectsManage__field">
+                <label for="ProjectImage" class="ProjectsManage__image">انتخاب تصویر پروژه</label>
+                <input type="file" id="ProjectImage" class="ProjectsManage__inputs" accept="image/*">
+            </div>
+            <button class="ProjectsManage__send">افزودن</button>
+        </section>
+    </main>
+
+    <script src="scripts/ProjectsManage.js"></script>
+</body>
+</html>
