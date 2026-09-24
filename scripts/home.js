@@ -27,6 +27,12 @@ const menu = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".MenuMobile");
 const mobileMenuLine = mobileMenu.querySelectorAll("span");
 mobileMenuLine.forEach(line => line.style = "background: #323232");
+const emailDomains = [
+    "@gmail.com",
+    "@yahoo.com",
+    "@outlook.com",
+    "@hotmail.com"
+];
 
 const showNotification = (message, icon) => {
     const notificationBox = document.querySelector(".notification");
@@ -69,6 +75,12 @@ const contactValidator = () => {
         contactMessage.value != ""
     ) {
         contactStatus = true;
+    };
+
+    const isValidDomain = emailDomains.some(domain => contactEmail.value.endsWith(domain));
+
+    if(!isValidDomain){
+        contactStatus = false;
     };
 
     return contactStatus;
@@ -169,7 +181,7 @@ const contactSubmitHandler = event => {
             });
     }
     else {
-        showNotification("لطفا اطلاعات فرم را کامل وارد کن تا پیامت ارسال بشه", "✕");
+        showNotification("لطفا اطلاعات فرم و ایمیل را کامل و درست وارد کن تا پیامت ارسال بشه", "✕");
     };
 
 };

@@ -380,8 +380,9 @@ body {
     width: 80px;
     height: 4px;
     background-color: var(--main_color);
-    bottom: 0;
-    transform: translate(95px, 16px);
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
 }
 
 .projects__items {
@@ -470,8 +471,9 @@ body {
     width: 100px;
     height: 4px;
     background-color: var(--main_color);
-    bottom: 0;
-    transform: translate(132px, 16px);
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
 }
 
 .ContactMe {
@@ -881,7 +883,7 @@ textarea {
         right: -300px;
         z-index: 5;
         padding: 30px 15px;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
     .menu__link{
