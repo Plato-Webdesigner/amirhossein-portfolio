@@ -187,17 +187,12 @@ const contactSubmitHandler = event => {
 };
 
 // Create projects loader function.
-const projectsLoader = () => {
+const projectsLoader = async () => {
     let resumeHtmlData;
-    fetch(resumesAPI)
-        .then(response => {
-            if (!response.ok) {
-                console.log("There was a problem with the API response!");
-            };
-            return response.json();
-        })
-        .then(resumeDatas => {
-            resumeDatas.forEach(resume => {
+        try{
+        const resumeResponse = await fetch(resumesAPI);
+        const resumeDatas = await resumeResponse.json();
+        resumeDatas.forEach(resume => {
                 resumeHtmlData = `
                 <div class="projects__item">
                     <div class="projects__item--image">
@@ -214,10 +209,10 @@ const projectsLoader = () => {
 
                 resumesContainer.insertAdjacentHTML("beforeend", resumeHtmlData);
             });
-        })
-        .catch(error => {
-            console.log(`Encountered with this error: ${error}`);
-        });
+    }
+    catch(error){
+        console.log(`Encountered with this ${error}`);
+    };
 };
 
 // Check sended URL for scorll to projects area or contact area.
