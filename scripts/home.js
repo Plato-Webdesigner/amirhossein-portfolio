@@ -79,7 +79,7 @@ const contactValidator = () => {
 
     const isValidDomain = emailDomains.some(domain => contactEmail.value.endsWith(domain));
 
-    if(!isValidDomain){
+    if (!isValidDomain) {
         contactStatus = false;
     };
 
@@ -153,7 +153,7 @@ const contactHandler = event => {
 
 const contactSubmitHandler = event => {
     event.preventDefault();
-    
+
     if (contactValidator()) {
         let newContact = {
             "name": contactName.value,
@@ -189,11 +189,11 @@ const contactSubmitHandler = event => {
 // Create projects loader function.
 const projectsLoader = async () => {
     let resumeHtmlData;
-        try{
+    try {
         const resumeResponse = await fetch(resumesAPI);
         const resumeDatas = await resumeResponse.json();
         resumeDatas.forEach(resume => {
-                resumeHtmlData = `
+            resumeHtmlData = `
                 <div class="projects__item">
                     <div class="projects__item--image">
                         <img src="imgs/${resume.resumeImage}" alt="Project image"
@@ -207,10 +207,10 @@ const projectsLoader = async () => {
                 </div>
                 `;
 
-                resumesContainer.insertAdjacentHTML("beforeend", resumeHtmlData);
-            });
+            resumesContainer.insertAdjacentHTML("beforeend", resumeHtmlData);
+        });
     }
-    catch(error){
+    catch (error) {
         console.log(`Encountered with this ${error}`);
     };
 };
